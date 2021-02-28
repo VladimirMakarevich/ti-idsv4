@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using Serilog;
 using System.IO;
 using Examination.Identity.Models;
+using Examination.Identity.Core;
 
 namespace Examination.Identity {
     public class Startup {
@@ -59,6 +60,20 @@ namespace Examination.Identity {
                 });
 
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
+
+            services.AddDbContext<IdentityContext>(options => options.UseNpgsql(connectionString));
+
+            services.AddIdentityServer()
+                    .AddDeveloperSigningCredential()
+                    .AddConfigurationStore(option =>
+                           option.ConfigureDbContext = builder => builder.UseNpgsql(connectionString, options =>
+                           options.MigrationsAssembly("YourDataAccessLayerProjectName")))
+                    .AddOperationalStore(option =>
+                           option.ConfigureDbContext = builder => builder.UseNpgsql(connectionString, options =>
+                           options.MigrationsAssembly("YourDataAccessLayerProjectName")));
+
+            DatabaseInitializer.Initialize(app, context);
+            app.UseIdentityServer();
 
             //services.AddDbContext<ExaminationContext>(options =>
             //    options.UseSqlServer(connectionString)
