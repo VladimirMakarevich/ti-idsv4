@@ -13,9 +13,12 @@ using System.Threading.Tasks;
 using Examination.Identity.Utils;
 using Microsoft.Extensions.Options;
 
-namespace Examination.Identity {
-    public class ReturnUrlParser : IReturnUrlParser {
-        public static class ProtocolRoutePaths {
+namespace Examination.Identity
+{
+    public class ReturnUrlParser : IReturnUrlParser
+    {
+        public static class ProtocolRoutePaths
+        {
             public const string Authorize = "connect/authorize";
             public const string AuthorizeCallback = Authorize + "/callback";
         }
@@ -30,19 +33,23 @@ namespace Examination.Identity {
             IUserSession userSession,
             ILogger<ReturnUrlParser> logger,
             IOptions<AppConfig> appConfig
-        ) {
+        )
+        {
             _appConfig = appConfig.Value;
             _validator = validator;
             _userSession = userSession;
             _logger = logger;
         }
 
-        public async Task<AuthorizationRequest> ParseAsync(string returnUrl) {
-            if (IsValidReturnUrl(returnUrl)) {
+        public async Task<AuthorizationRequest> ParseAsync(string returnUrl)
+        {
+            if (IsValidReturnUrl(returnUrl))
+            {
                 var parameters = returnUrl.ReadQueryStringAsNameValueCollection();
                 var user = await _userSession.GetUserAsync();
                 var result = await _validator.ValidateAsync(parameters, user);
-                if (!result.IsError) {
+                if (!result.IsError)
+                {
                     _logger.LogTrace("AuthorizationRequest being returned");
                     return result.ValidatedRequest.ToAuthorizationRequest();
                 }
@@ -52,18 +59,22 @@ namespace Examination.Identity {
             return null;
         }
 
-        public bool IsValidReturnUrl(string returnUrl) {
+        public bool IsValidReturnUrl(string returnUrl)
+        {
             // had to add returnUrl.StartsWith("http://localhost:5000")
             // because when UI and API are not on the same host, the URL is not local
             // the condition here should be changed to either use configuration or just match domain
-            if (returnUrl.IsLocalUrl() || returnUrl.StartsWith(_appConfig.DefaultAppUrl)) {
+            if (returnUrl.IsLocalUrl() || returnUrl.StartsWith(_appConfig.DefaultAppUrl))
+            {
                 var index = returnUrl.IndexOf('?');
-                if (index >= 0) {
+                if (index >= 0)
+                {
                     returnUrl = returnUrl.Substring(0, index);
                 }
 
                 if (returnUrl.EndsWith(ProtocolRoutePaths.Authorize, StringComparison.Ordinal) ||
-                    returnUrl.EndsWith(ProtocolRoutePaths.AuthorizeCallback, StringComparison.Ordinal)) {
+                    returnUrl.EndsWith(ProtocolRoutePaths.AuthorizeCallback, StringComparison.Ordinal))
+                {
                     _logger.LogTrace("returnUrl is valid");
                     return true;
                 }
@@ -74,17 +85,22 @@ namespace Examination.Identity {
         }
     }
 
-    internal static class Extensions {
+    internal static class Extensions
+    {
         //[DebuggerStepThrough]
-        public static NameValueCollection ReadQueryStringAsNameValueCollection(this string url) {
-            if (url != null) {
+        public static NameValueCollection ReadQueryStringAsNameValueCollection(this string url)
+        {
+            if (url != null)
+            {
                 var idx = url.IndexOf('?');
-                if (idx >= 0) {
+                if (idx >= 0)
+                {
                     url = url.Substring(idx + 1);
                 }
 
                 var query = QueryHelpers.ParseNullableQuery(url);
-                if (query != null) {
+                if (query != null)
+                {
                     return query.AsNameValueCollection();
                 }
             }
@@ -93,20 +109,25 @@ namespace Examination.Identity {
         }
 
         [DebuggerStepThrough]
-        public static bool IsLocalUrl(this string url) {
-            if (string.IsNullOrEmpty(url)) {
+        public static bool IsLocalUrl(this string url)
+        {
+            if (string.IsNullOrEmpty(url))
+            {
                 return false;
             }
 
             // Allows "/" or "/foo" but not "//" or "/\".
-            if (url[0] == '/') {
+            if (url[0] == '/')
+            {
                 // url is exactly "/"
-                if (url.Length == 1) {
+                if (url.Length == 1)
+                {
                     return true;
                 }
 
                 // url doesn't start with "//" or "/\"
-                if (url[1] != '/' && url[1] != '\\') {
+                if (url[1] != '/' && url[1] != '\\')
+                {
                     return true;
                 }
 
@@ -114,14 +135,17 @@ namespace Examination.Identity {
             }
 
             // Allows "~/" or "~/foo" but not "~//" or "~/\".
-            if (url[0] == '~' && url.Length > 1 && url[1] == '/') {
+            if (url[0] == '~' && url.Length > 1 && url[1] == '/')
+            {
                 // url is exactly "~/"
-                if (url.Length == 2) {
+                if (url.Length == 2)
+                {
                     return true;
                 }
 
                 // url doesn't start with "~//" or "~/\"
-                if (url[2] != '/' && url[2] != '\\') {
+                if (url[2] != '/' && url[2] != '\\')
+                {
                     return true;
                 }
 
@@ -132,19 +156,20 @@ namespace Examination.Identity {
         }
 
         [DebuggerStepThrough]
-        internal static AuthorizationRequest ToAuthorizationRequest(this ValidatedAuthorizeRequest request) {
-            var authRequest = new AuthorizationRequest {
-                ClientId = request.ClientId,
-                RedirectUri = request.RedirectUri,
-                DisplayMode = request.DisplayMode,
-                UiLocales = request.UiLocales,
-                IdP = request.GetIdP(),
-                Tenant = request.GetTenant(),
-                LoginHint = request.LoginHint,
-                PromptMode = request.PromptMode,
-                AcrValues = request.GetAcrValues(),
-                ScopesRequested = request.RequestedScopes,
-            };
+        internal static AuthorizationRequest ToAuthorizationRequest(this ValidatedAuthorizeRequest request)
+        {
+            var authRequest = new AuthorizationRequest();
+
+            authRequest.Client = request.Client;
+            authRequest.RedirectUri = request.RedirectUri;
+            authRequest.DisplayMode = request.DisplayMode;
+            authRequest.UiLocales = request.UiLocales;
+            authRequest.IdP = request.GetIdP();
+            authRequest.Tenant = request.GetTenant();
+            authRequest.LoginHint = request.LoginHint;
+            authRequest.PromptModes = request.PromptModes;
+            authRequest.AcrValues = request.GetAcrValues();
+            authRequest.Client.AllowedScopes = request.RequestedScopes;
 
             authRequest.Parameters.Add(request.Raw);
 
@@ -152,10 +177,12 @@ namespace Examination.Identity {
         }
 
         [DebuggerStepThrough]
-        public static NameValueCollection AsNameValueCollection(this IDictionary<string, StringValues> collection) {
+        public static NameValueCollection AsNameValueCollection(this IDictionary<string, StringValues> collection)
+        {
             var nv = new NameValueCollection();
 
-            foreach (var field in collection) {
+            foreach (var field in collection)
+            {
                 nv.Add(field.Key, field.Value.First());
             }
 

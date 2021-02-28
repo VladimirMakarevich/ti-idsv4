@@ -60,20 +60,20 @@ namespace Examination.Identity {
 
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
 
-            services.AddDbContext<ExaminationContext>(options =>
-                options.UseSqlServer(connectionString)
-            );
+            //services.AddDbContext<ExaminationContext>(options =>
+            //    options.UseSqlServer(connectionString)
+            //);
 
-            services.AddIdentity<User, IdentityRole>(options => {
-                    options.Password.RequiredLength = 0;
-                    options.Password.RequiredUniqueChars = 0;
-                    options.Password.RequireLowercase = false;
-                    options.Password.RequireUppercase = false;
-                    options.Password.RequireDigit = false;
-                    options.Password.RequireNonAlphanumeric = false;
-                })
-                .AddEntityFrameworkStores<ExaminationContext>()
-                .AddDefaultTokenProviders();
+            //services.AddIdentity<User, IdentityRole>(options => {
+            //        options.Password.RequiredLength = 0;
+            //        options.Password.RequiredUniqueChars = 0;
+            //        options.Password.RequireLowercase = false;
+            //        options.Password.RequireUppercase = false;
+            //        options.Password.RequireDigit = false;
+            //        options.Password.RequireNonAlphanumeric = false;
+            //    })
+            //    .AddEntityFrameworkStores<ExaminationContext>()
+            //    .AddDefaultTokenProviders();
 
             services.AddIdentityServer(ctx => {
                         //ctx.UserInteraction.LoginUrl = "http://localhost:4201/sign-in";
