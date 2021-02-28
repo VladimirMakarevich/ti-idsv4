@@ -1,0 +1,554 @@
+2020-07-15 07:17:09.303 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 07:17:09.470 +03:00 [Information] CORS policy execution successful.
+2020-07-15 07:17:09.471 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 07:17:09.471 +03:00 [Information] DbContext: 4a4fd340-42bf-4082-87be-f38012103e2f
+2020-07-15 07:17:09.472 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 07:17:09.472 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GFS:00000001", TimeStamp: 07/15/2020 04:17:09, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 07:17:11.709 +03:00 [Information] Executed DbCommand ("230"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 07:17:11.713 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "g0zyfeSIieWrlYeTaRKwSltzHAAmUYYndTeI68Tw1WY", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 07:17:11.793 +03:00 [Information] Executed DbCommand ("80"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 07:17:11.898 +03:00 [Information] Executed DbCommand ("102"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 07:17:11.905 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****A1wg" }, Token { TokenType: "refresh_token", TokenValue: "****-gmQ" }, Token { TokenType: "access_token", TokenValue: "****wNdw" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GFS:00000001", TimeStamp: 07/15/2020 04:17:11, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 07:17:11.906 +03:00 [Information] Request finished in 2602.3121ms 200 application/json; charset=UTF-8
+2020-07-15 07:17:22.116 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 07:17:22.116 +03:00 [Information] CORS policy execution successful.
+2020-07-15 07:17:22.117 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 07:17:22.118 +03:00 [Information] DbContext: 50817dc6-c774-4260-88ca-4682be28e491
+2020-07-15 07:17:22.118 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 07:17:22.118 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GFT:00000001", TimeStamp: 07/15/2020 04:17:22, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 07:17:22.128 +03:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 07:17:22.129 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "vjXRaApZHHOiv5YKIChgZ4SL_F0PfFEhPkZd_2Hsmjo", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 07:17:22.156 +03:00 [Information] Executed DbCommand ("27"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 07:17:22.178 +03:00 [Information] Executed DbCommand ("21"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 07:17:22.185 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****2O1Q" }, Token { TokenType: "refresh_token", TokenValue: "****Yus8" }, Token { TokenType: "access_token", TokenValue: "****stNQ" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GFT:00000001", TimeStamp: 07/15/2020 04:17:22, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 07:17:22.186 +03:00 [Information] Request finished in 69.6679ms 200 application/json; charset=UTF-8
+2020-07-15 07:17:29.044 +03:00 [Information] Request starting HTTP/2 GET https://localhost:5005/.well-known/openid-configuration  
+2020-07-15 07:17:29.044 +03:00 [Information] CORS policy execution successful.
+2020-07-15 07:17:29.046 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 07:17:29.046 +03:00 [Information] DbContext: a397bc43-185c-441a-98a4-a98a91032d9e
+2020-07-15 07:17:29.048 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration"
+2020-07-15 07:17:29.055 +03:00 [Information] Request finished in 11.0951ms 200 application/json; charset=UTF-8
+2020-07-15 07:17:29.472 +03:00 [Information] Request starting HTTP/2 GET https://localhost:5005/connect/checksession  
+2020-07-15 07:17:29.473 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 07:17:29.474 +03:00 [Information] DbContext: f64bc1d6-b352-4a43-af89-c8e4357a8c49
+2020-07-15 07:17:29.478 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 07:17:29.481 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 07:17:29.483 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 07:17:29.485 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.CheckSessionEndpoint" for "/connect/checksession"
+2020-07-15 07:17:29.489 +03:00 [Information] Request finished in 16.8523ms 200 text/html; charset=UTF-8
+2020-07-15 07:22:22.331 +03:00 [Information] Request starting HTTP/2 GET https://localhost:5005/.well-known/openid-configuration  
+2020-07-15 07:22:22.331 +03:00 [Information] CORS policy execution successful.
+2020-07-15 07:22:22.332 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 07:22:22.332 +03:00 [Information] DbContext: 59613ba9-8a4f-4ab5-afe8-e7ff9d8a19e8
+2020-07-15 07:22:22.332 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration"
+2020-07-15 07:22:22.332 +03:00 [Information] Request finished in 1.3597ms 200 application/json; charset=UTF-8
+2020-07-15 07:22:22.477 +03:00 [Information] Request starting HTTP/2 GET https://localhost:5005/connect/checksession  
+2020-07-15 07:22:22.478 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 07:22:22.478 +03:00 [Information] DbContext: 2b41a593-cffd-44e0-86bb-2d51176576a5
+2020-07-15 07:22:22.478 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.CheckSessionEndpoint" for "/connect/checksession"
+2020-07-15 07:22:22.478 +03:00 [Information] Request finished in 0.929ms 200 text/html; charset=UTF-8
+2020-07-15 10:31:04.055 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 10:31:04.055 +03:00 [Information] CORS policy execution successful.
+2020-07-15 10:31:04.056 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 10:31:04.056 +03:00 [Information] DbContext: 31b31b78-6253-46ae-ad9d-f6655f81f37b
+2020-07-15 10:31:04.056 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 10:31:04.057 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GG1:00000001", TimeStamp: 07/15/2020 07:31:04, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 10:31:04.762 +03:00 [Information] Executed DbCommand ("19"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 10:31:04.772 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "T2M-GQ91tM5oQkuzssQbR_w1a_D_zFDDQ0dNkHJ-gmQ", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 10:31:04.802 +03:00 [Information] Executed DbCommand ("28"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 10:31:04.869 +03:00 [Information] Executed DbCommand ("52"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 10:31:04.877 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****3QWA" }, Token { TokenType: "refresh_token", TokenValue: "****gknA" }, Token { TokenType: "access_token", TokenValue: "****bo4g" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GG1:00000001", TimeStamp: 07/15/2020 07:31:04, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 10:31:04.878 +03:00 [Information] Request finished in 823.2688ms 200 application/json; charset=UTF-8
+2020-07-15 10:31:10.757 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 10:31:10.758 +03:00 [Information] CORS policy execution successful.
+2020-07-15 10:31:10.759 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 10:31:10.759 +03:00 [Information] DbContext: d99efe6b-5bb5-4926-8d88-cb890374dd94
+2020-07-15 10:31:10.760 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 10:31:10.761 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GG2:00000001", TimeStamp: 07/15/2020 07:31:10, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 10:31:10.809 +03:00 [Information] Executed DbCommand ("25"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 10:31:10.818 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "F8e3O5yDd2xORNvOsyPLHjjyFamCm08BJKIuaQGYus8", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 10:31:10.829 +03:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 10:31:10.834 +03:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 10:31:10.839 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****p_3Q" }, Token { TokenType: "refresh_token", TokenValue: "****nNI4" }, Token { TokenType: "access_token", TokenValue: "****oqxQ" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GG2:00000001", TimeStamp: 07/15/2020 07:31:10, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 10:31:10.839 +03:00 [Information] Request finished in 82.9446ms 200 application/json; charset=UTF-8
+2020-07-15 10:31:17.405 +03:00 [Information] Request starting HTTP/2 GET https://localhost:5005/.well-known/openid-configuration  
+2020-07-15 10:31:17.405 +03:00 [Information] CORS policy execution successful.
+2020-07-15 10:31:17.407 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 10:31:17.407 +03:00 [Information] DbContext: b66080f5-93e4-423b-9282-da1c8d81e683
+2020-07-15 10:31:17.407 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration"
+2020-07-15 10:31:17.409 +03:00 [Information] Request finished in 4.4467ms 200 application/json; charset=UTF-8
+2020-07-15 10:31:18.065 +03:00 [Information] Request starting HTTP/2 GET https://localhost:5005/connect/checksession  
+2020-07-15 10:31:18.416 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 10:31:18.416 +03:00 [Information] DbContext: 2b365d13-a7b7-4475-887b-abbe1476106e
+2020-07-15 10:31:18.419 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 10:31:18.455 +03:00 [Information] Executed DbCommand ("35"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 10:31:18.463 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 10:31:18.463 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.CheckSessionEndpoint" for "/connect/checksession"
+2020-07-15 10:31:18.464 +03:00 [Information] Request finished in 399.6267ms 200 text/html; charset=UTF-8
+2020-07-15 10:35:45.026 +03:00 [Information] Request starting HTTP/2 GET https://localhost:5005/.well-known/openid-configuration  
+2020-07-15 10:35:45.027 +03:00 [Information] CORS policy execution successful.
+2020-07-15 10:35:45.027 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 10:35:45.027 +03:00 [Information] DbContext: 00b345b0-cddd-46a7-bdfd-9a0836e24767
+2020-07-15 10:35:45.027 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration"
+2020-07-15 10:35:45.028 +03:00 [Information] Request finished in 1.5125ms 200 application/json; charset=UTF-8
+2020-07-15 10:35:45.163 +03:00 [Information] Request starting HTTP/2 GET https://localhost:5005/connect/checksession  
+2020-07-15 10:35:45.163 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 10:35:45.163 +03:00 [Information] DbContext: 505fd3b1-8944-4726-a061-2b91d2ca774f
+2020-07-15 10:35:45.164 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.CheckSessionEndpoint" for "/connect/checksession"
+2020-07-15 10:35:45.164 +03:00 [Information] Request finished in 1.2051ms 200 text/html; charset=UTF-8
+2020-07-15 11:30:07.488 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 11:30:07.489 +03:00 [Information] CORS policy execution successful.
+2020-07-15 11:30:07.490 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 11:30:07.490 +03:00 [Information] DbContext: 7553fbc4-4640-4b67-8b1f-108b7bbbe88c
+2020-07-15 11:30:07.490 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 11:30:07.491 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GG7:00000001", TimeStamp: 07/15/2020 08:30:07, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 11:30:07.504 +03:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 11:30:07.504 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "O-VTw4Zspjl9llAIYOAnHod5r-xpol6Ac30UGkqgknA", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 11:30:07.507 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 11:30:07.510 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 11:30:07.512 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****EiVQ" }, Token { TokenType: "refresh_token", TokenValue: "****hSJ8" }, Token { TokenType: "access_token", TokenValue: "****r3Xg" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GG7:00000001", TimeStamp: 07/15/2020 08:30:07, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 11:30:07.512 +03:00 [Information] Request finished in 24.4039ms 200 application/json; charset=UTF-8
+2020-07-15 11:30:20.541 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 11:30:20.541 +03:00 [Information] CORS policy execution successful.
+2020-07-15 11:30:20.541 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 11:30:20.541 +03:00 [Information] DbContext: 0483ec67-2b07-4fab-aa02-9d9dea8f33f6
+2020-07-15 11:30:20.541 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 11:30:20.542 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GG7:00000003", TimeStamp: 07/15/2020 08:30:20, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 11:30:20.546 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 11:30:20.546 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "vLF3S8L8AAx69FTtcIlQZxaok0k5otB41lQT5x1nNI4", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 11:30:20.548 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 11:30:20.551 +03:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 11:30:20.555 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****JWRw" }, Token { TokenType: "refresh_token", TokenValue: "****QW5k" }, Token { TokenType: "access_token", TokenValue: "****qRsA" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GG7:00000003", TimeStamp: 07/15/2020 08:30:20, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 11:30:20.555 +03:00 [Information] Request finished in 14.199ms 200 application/json; charset=UTF-8
+2020-07-15 12:29:07.634 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 12:29:07.637 +03:00 [Information] CORS policy execution successful.
+2020-07-15 12:29:07.642 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 12:29:07.642 +03:00 [Information] DbContext: 67c6c8d9-beda-499d-9dcf-bc48f4c8eb4f
+2020-07-15 12:29:07.643 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 12:29:07.644 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GG8:00000001", TimeStamp: 07/15/2020 09:29:07, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 12:29:07.659 +03:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 12:29:07.661 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "yR7ZVoCEJ7DVUHJ9BTwp075vfH2baMOpzrTZalShSJ8", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 12:29:07.664 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 12:29:07.667 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 12:29:07.669 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****z6DQ" }, Token { TokenType: "refresh_token", TokenValue: "****PFmI" }, Token { TokenType: "access_token", TokenValue: "****XFDg" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GG8:00000001", TimeStamp: 07/15/2020 09:29:07, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 12:29:07.670 +03:00 [Information] Request finished in 36.6366ms 200 application/json; charset=UTF-8
+2020-07-15 12:29:21.522 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 12:29:21.522 +03:00 [Information] CORS policy execution successful.
+2020-07-15 12:29:21.523 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 12:29:21.523 +03:00 [Information] DbContext: 8bf9aa90-79e3-42b0-a25e-7faea86a34f0
+2020-07-15 12:29:21.523 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 12:29:21.524 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GG8:00000003", TimeStamp: 07/15/2020 09:29:21, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 12:29:21.527 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 12:29:21.528 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "Zr_LAWsptcTyQswFsatmqqrUwF7XvRoa9RqoJzqQW5k", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 12:29:21.530 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 12:29:21.532 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 12:29:21.537 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****quog" }, Token { TokenType: "refresh_token", TokenValue: "****xSE8" }, Token { TokenType: "access_token", TokenValue: "****LG0w" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GG8:00000003", TimeStamp: 07/15/2020 09:29:21, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 12:29:21.537 +03:00 [Information] Request finished in 15.3111ms 200 application/json; charset=UTF-8
+2020-07-15 13:28:07.732 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 13:28:07.733 +03:00 [Information] CORS policy execution successful.
+2020-07-15 13:28:07.738 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 13:28:07.739 +03:00 [Information] DbContext: 1eaf36a4-8518-4930-9ba4-270e45a83e14
+2020-07-15 13:28:07.739 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 13:28:07.741 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GG9:00000001", TimeStamp: 07/15/2020 10:28:07, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 13:28:07.754 +03:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 13:28:07.755 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "oBveISTOxGtWARLPI9e7lx33QOVTFY9hPfPSUH1PFmI", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 13:28:07.758 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 13:28:07.761 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 13:28:07.764 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****WPig" }, Token { TokenType: "refresh_token", TokenValue: "****Efdo" }, Token { TokenType: "access_token", TokenValue: "****B17g" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GG9:00000001", TimeStamp: 07/15/2020 10:28:07, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 13:28:07.764 +03:00 [Information] Request finished in 33.2677ms 200 application/json; charset=UTF-8
+2020-07-15 13:28:22.503 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 13:28:22.503 +03:00 [Information] CORS policy execution successful.
+2020-07-15 13:28:22.504 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 13:28:22.504 +03:00 [Information] DbContext: c549650a-f634-4c0b-8147-86ba94b7e024
+2020-07-15 13:28:22.504 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 13:28:22.505 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GG9:00000003", TimeStamp: 07/15/2020 10:28:22, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 13:28:22.508 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 13:28:22.509 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "L3ZHso0Zh23kJpAKBLhFyhGxd84CVuuZf0d8D8axSE8", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 13:28:22.511 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 13:28:22.513 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 13:28:22.520 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****pQtA" }, Token { TokenType: "refresh_token", TokenValue: "****q6to" }, Token { TokenType: "access_token", TokenValue: "****8dBg" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GG9:00000003", TimeStamp: 07/15/2020 10:28:22, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 13:28:22.520 +03:00 [Information] Request finished in 17.4127ms 200 application/json; charset=UTF-8
+2020-07-15 14:27:07.849 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 14:27:07.850 +03:00 [Information] CORS policy execution successful.
+2020-07-15 14:27:07.852 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 14:27:07.853 +03:00 [Information] DbContext: 38e26cef-1dc6-4e93-a90c-0211dd871e90
+2020-07-15 14:27:07.853 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 14:27:07.854 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGA:00000001", TimeStamp: 07/15/2020 11:27:07, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 14:27:07.865 +03:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 14:27:07.866 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "oGY9uQ39QlCL29qBN9IrvYUlUiMhKmlozqwF0qaEfdo", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 14:27:07.868 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 14:27:07.872 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 14:27:07.874 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****HxLQ" }, Token { TokenType: "refresh_token", TokenValue: "****6LLE" }, Token { TokenType: "access_token", TokenValue: "****vZSw" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGA:00000001", TimeStamp: 07/15/2020 11:27:07, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 14:27:07.875 +03:00 [Information] Request finished in 26.0288ms 200 application/json; charset=UTF-8
+2020-07-15 14:27:23.507 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 14:27:23.507 +03:00 [Information] CORS policy execution successful.
+2020-07-15 14:27:23.507 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 14:27:23.508 +03:00 [Information] DbContext: 7c0daf76-5db4-46b7-b344-ebc39edcca14
+2020-07-15 14:27:23.508 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 14:27:23.508 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGA:00000003", TimeStamp: 07/15/2020 11:27:23, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 14:27:23.513 +03:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 14:27:23.514 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "mViCUVwh4ASkH7Ehil1PHNjERoeZlLQMHTH8Tfzq6to", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 14:27:23.517 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 14:27:23.522 +03:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 14:27:23.525 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****2yWg" }, Token { TokenType: "refresh_token", TokenValue: "****bitc" }, Token { TokenType: "access_token", TokenValue: "****FZRQ" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGA:00000003", TimeStamp: 07/15/2020 11:27:23, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 14:27:23.525 +03:00 [Information] Request finished in 18.5743ms 200 application/json; charset=UTF-8
+2020-07-15 15:26:07.954 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 15:26:07.954 +03:00 [Information] CORS policy execution successful.
+2020-07-15 15:26:07.955 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 15:26:07.955 +03:00 [Information] DbContext: dabb35db-de85-4637-a2d0-3296112f3f70
+2020-07-15 15:26:07.955 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 15:26:07.956 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGB:00000001", TimeStamp: 07/15/2020 12:26:07, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 15:26:07.963 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 15:26:07.964 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "L8UT23kjPbCyJCcs3cOo500WBRle9yFy9O2EXmx6LLE", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 15:26:07.966 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 15:26:07.969 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 15:26:07.971 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****4-vw" }, Token { TokenType: "refresh_token", TokenValue: "****ND5s" }, Token { TokenType: "access_token", TokenValue: "****InMw" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGB:00000001", TimeStamp: 07/15/2020 12:26:07, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 15:26:07.971 +03:00 [Information] Request finished in 17.4734ms 200 application/json; charset=UTF-8
+2020-07-15 15:26:24.499 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 15:26:24.499 +03:00 [Information] CORS policy execution successful.
+2020-07-15 15:26:24.499 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 15:26:24.499 +03:00 [Information] DbContext: 8220b3f0-077b-4c5f-abcd-bc261561cd97
+2020-07-15 15:26:24.500 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 15:26:24.500 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGB:00000003", TimeStamp: 07/15/2020 12:26:24, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 15:26:24.504 +03:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 15:26:24.505 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "aqsRyCHdNw5FWAZE3HRri2K95pBpzSNTAeKdmAsbitc", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 15:26:24.506 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 15:26:24.510 +03:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 15:26:24.512 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****_Pgw" }, Token { TokenType: "refresh_token", TokenValue: "****Wcug" }, Token { TokenType: "access_token", TokenValue: "****VhdA" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGB:00000003", TimeStamp: 07/15/2020 12:26:24, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 15:26:24.512 +03:00 [Information] Request finished in 13.2906ms 200 application/json; charset=UTF-8
+2020-07-15 16:25:08.058 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 16:25:08.058 +03:00 [Information] CORS policy execution successful.
+2020-07-15 16:25:08.059 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 16:25:08.059 +03:00 [Information] DbContext: a7e13f22-26bf-4df3-954f-673befd3379c
+2020-07-15 16:25:08.059 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 16:25:08.059 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGC:00000001", TimeStamp: 07/15/2020 13:25:08, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 16:25:08.066 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 16:25:08.066 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "Z34j9b6OhZJodZAj_A-XiZt_vymOpWQr-ZUjAVwND5s", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 16:25:08.068 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 16:25:08.070 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 16:25:08.072 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****NgiQ" }, Token { TokenType: "refresh_token", TokenValue: "****QXFc" }, Token { TokenType: "access_token", TokenValue: "****u9zQ" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGC:00000001", TimeStamp: 07/15/2020 13:25:08, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 16:25:08.073 +03:00 [Information] Request finished in 15.2551ms 200 application/json; charset=UTF-8
+2020-07-15 16:25:25.508 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 16:25:25.508 +03:00 [Information] CORS policy execution successful.
+2020-07-15 16:25:25.509 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 16:25:25.509 +03:00 [Information] DbContext: 06c20fb2-eded-4056-b7a4-98677c1833f7
+2020-07-15 16:25:25.509 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 16:25:25.509 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGC:00000003", TimeStamp: 07/15/2020 13:25:25, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 16:25:25.511 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 16:25:25.511 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "mHi3G9z4B1Oq7EIrwbrmnyoC778lNwig_au7AmyWcug", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 16:25:25.512 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 16:25:25.513 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 16:25:25.515 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****ZVyQ" }, Token { TokenType: "refresh_token", TokenValue: "****5el8" }, Token { TokenType: "access_token", TokenValue: "****N5Pg" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGC:00000003", TimeStamp: 07/15/2020 13:25:25, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 16:25:25.515 +03:00 [Information] Request finished in 7.2634ms 200 application/json; charset=UTF-8
+2020-07-15 17:24:08.121 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 17:24:08.121 +03:00 [Information] CORS policy execution successful.
+2020-07-15 17:24:08.122 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 17:24:08.122 +03:00 [Information] DbContext: 00049635-056d-4ec2-88b2-d03e0b5eaff7
+2020-07-15 17:24:08.122 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 17:24:08.122 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGD:00000001", TimeStamp: 07/15/2020 14:24:08, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 17:24:08.134 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 17:24:08.134 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "dU2gaZT9q09Vr7dDfczRvQ0co13xCukS0L37NhiQXFc", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 17:24:08.136 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 17:24:08.140 +03:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 17:24:08.142 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****lUDw" }, Token { TokenType: "refresh_token", TokenValue: "****N4tY" }, Token { TokenType: "access_token", TokenValue: "****a7eA" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGD:00000001", TimeStamp: 07/15/2020 14:24:08, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 17:24:08.142 +03:00 [Information] Request finished in 21.0888ms 200 application/json; charset=UTF-8
+2020-07-15 17:24:26.503 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 17:24:26.503 +03:00 [Information] CORS policy execution successful.
+2020-07-15 17:24:26.503 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 17:24:26.503 +03:00 [Information] DbContext: 8fa75cda-dd74-45aa-ae12-3b6c673ffd8b
+2020-07-15 17:24:26.503 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 17:24:26.503 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGD:00000003", TimeStamp: 07/15/2020 14:24:26, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 17:24:26.505 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 17:24:26.505 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "It1c9X-hAqOEvkqY4Q0cZ_ZrqLQ8uXZdu9Ww1rG5el8", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 17:24:26.505 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 17:24:26.506 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 17:24:26.508 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****Ncwg" }, Token { TokenType: "refresh_token", TokenValue: "****85Kw" }, Token { TokenType: "access_token", TokenValue: "****Ropw" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGD:00000003", TimeStamp: 07/15/2020 14:24:26, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 17:24:26.508 +03:00 [Information] Request finished in 4.9643ms 200 application/json; charset=UTF-8
+2020-07-15 18:23:08.194 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 18:23:08.194 +03:00 [Information] CORS policy execution successful.
+2020-07-15 18:23:08.195 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 18:23:08.195 +03:00 [Information] DbContext: 621c1f81-e66c-4dba-b54c-11ff85e4c5cd
+2020-07-15 18:23:08.195 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 18:23:08.195 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGE:00000001", TimeStamp: 07/15/2020 15:23:08, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 18:23:08.203 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 18:23:08.203 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "0XGaa96ryIRfSi1E9K5W79BVeq6-6HY-Zz26xzIN4tY", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 18:23:08.205 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 18:23:08.207 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 18:23:08.209 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****6_Mw" }, Token { TokenType: "refresh_token", TokenValue: "****rvkE" }, Token { TokenType: "access_token", TokenValue: "****QnbA" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGE:00000001", TimeStamp: 07/15/2020 15:23:08, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 18:23:08.209 +03:00 [Information] Request finished in 15.3666ms 200 application/json; charset=UTF-8
+2020-07-15 18:23:27.504 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 18:23:27.504 +03:00 [Information] CORS policy execution successful.
+2020-07-15 18:23:27.505 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 18:23:27.505 +03:00 [Information] DbContext: 6ac56a08-926d-4b9e-8894-11e77e015643
+2020-07-15 18:23:27.505 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 18:23:27.505 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGE:00000003", TimeStamp: 07/15/2020 15:23:27, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 18:23:27.508 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 18:23:27.508 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "7BfnYMGHT6ryIXWPN0fLrPXwJxu_UzJbO0aLx6385Kw", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 18:23:27.511 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 18:23:27.513 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 18:23:27.515 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****OlNg" }, Token { TokenType: "refresh_token", TokenValue: "****mZHQ" }, Token { TokenType: "access_token", TokenValue: "****LVBw" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGE:00000003", TimeStamp: 07/15/2020 15:23:27, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 18:23:27.515 +03:00 [Information] Request finished in 11.2091ms 200 application/json; charset=UTF-8
+2020-07-15 19:22:08.289 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 19:22:08.289 +03:00 [Information] CORS policy execution successful.
+2020-07-15 19:22:08.290 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 19:22:08.290 +03:00 [Information] DbContext: b05274c1-a150-4449-8ce0-d1ab23162cdf
+2020-07-15 19:22:08.290 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 19:22:08.290 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGF:00000001", TimeStamp: 07/15/2020 16:22:08, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 19:22:08.296 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 19:22:08.297 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "qjU0ohQRM4E8YeaSxKYlb18eQ_JdXfBaqtdw_5urvkE", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 19:22:08.298 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 19:22:08.301 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 19:22:08.303 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****D59w" }, Token { TokenType: "refresh_token", TokenValue: "****NYmg" }, Token { TokenType: "access_token", TokenValue: "****fNYw" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGF:00000001", TimeStamp: 07/15/2020 16:22:08, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 19:22:08.303 +03:00 [Information] Request finished in 14.0629ms 200 application/json; charset=UTF-8
+2020-07-15 19:22:28.501 +03:00 [Information] Request starting HTTP/2 POST https://localhost:5005/connect/token application/x-www-form-urlencoded 145
+2020-07-15 19:22:28.503 +03:00 [Information] CORS policy execution successful.
+2020-07-15 19:22:28.503 +03:00 [Information] Entity Framework Core "3.1.5" initialized '"ExaminationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2020-07-15 19:22:28.503 +03:00 [Information] DbContext: 1d81a1ad-1835-4ce7-b71b-31f1df1eddd8
+2020-07-15 19:22:28.503 +03:00 [Information] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token"
+2020-07-15 19:22:28.504 +03:00 [Information] ClientAuthenticationSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", AuthenticationMethod: "NoSecret", Category: "Authentication", Name: "Client Authentication Success", EventType: Success, Id: 1010, Message: null, ActivityId: "0HM16RTAA0GGF:00000003", TimeStamp: 07/15/2020 16:22:28, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 19:22:28.511 +03:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BirthDate], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Email], [a].[EmailConfirmed], [a].[Facebook], [a].[FirstName], [a].[ImageId], [a].[Language], [a].[LastName], [a].[LinkedIn], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecondEmail], [a].[SecurityStamp], [a].[Skype], [a].[Twitter], [a].[TwoFactorEnabled], [a].[UserName], [a].[Youtube]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-07-15 19:22:28.512 +03:00 [Information] Token request validation success, TokenRequestValidationLog { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "sV2W0tzw4l14sBtaT-iaQwVnLh_F7uXW8hl1yvRmZHQ", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("request_type": "si:s"), ("refresh_token": "***REDACTED***"), ("grant_type": "refresh_token"), ("client_id": "9440C9184C90424DB12866918A83F5A5")] }
+2020-07-15 19:22:28.517 +03:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-07-15 19:22:28.523 +03:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-07-15 19:22:28.526 +03:00 [Information] TokenIssuedSuccessEvent { ClientId: "9440C9184C90424DB12866918A83F5A5", ClientName: null, RedirectUri: null, Endpoint: "Token", SubjectId: "398dad5f-7140-4888-9662-42be4c145497", Scopes: "openid profile role examination_api offline_access", GrantType: "refresh_token", Tokens: [Token { TokenType: "id_token", TokenValue: "****tBew" }, Token { TokenType: "refresh_token", TokenValue: "****SWQQ" }, Token { TokenType: "access_token", TokenValue: "****gvuA" }], Category: "Token", Name: "Token Issued Success", EventType: Success, Id: 2000, Message: null, ActivityId: "0HM16RTAA0GGF:00000003", TimeStamp: 07/15/2020 16:22:28, ProcessId: 22268, LocalIpAddress: "::1:5005", RemoteIpAddress: "::1" }
+2020-07-15 19:22:28.527 +03:00 [Information] Request finished in 25.3275ms 200 application/json; charset=UTF-8

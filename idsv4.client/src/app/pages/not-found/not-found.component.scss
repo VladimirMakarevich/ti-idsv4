@@ -1,0 +1,35 @@
+app-not-found {
+
+    #not-found-oidc {
+        width: 100%;
+        background-size: cover;
+
+        #not-found-oidc-form-wrapper {
+            flex: 1 0 auto;
+            padding: 32px;
+
+            #not-found-oidc-form {
+                max-width: 480px;
+                padding: 48px;
+                text-align: center;
+
+                .title {
+                    font-size: 20px;
+                    margin-top: 16px;
+                }
+
+                .subtitle {
+                    margin: 16px auto;
+                    max-width: 300px;
+                    font-size: 15px;
+                }
+
+                .message {
+                    font-weight: 600;
+                    text-align: center;
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+}

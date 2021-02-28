@@ -1,0 +1,21 @@
+<mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>{{name}}</mat-label>
+    <input
+        matInput
+        [type]="type"
+        [placeholder]="placeholder"
+        [formControl]="control"
+        [maxLength]="maxLength"
+        [name]="name"
+        [errorStateMatcher]="errorStateMatcher"
+    />
+
+    <mat-icon *ngIf="icon" matSuffix class="secondary-text">
+        {{icon}}
+    </mat-icon>
+
+    <mat-error>
+        {{ error }}
+    </mat-error>
+
+</mat-form-field>

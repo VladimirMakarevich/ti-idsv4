@@ -1,0 +1,8 @@
+<div class="app-single-checkbox">
+    <mat-checkbox [formControl]="control">
+        <ng-content></ng-content>
+    </mat-checkbox>
+    <mat-error *ngIf="control?.invalid && control?.touched || isCustomErrorState">
+        {{ error }}
+    </mat-error>
+</div>

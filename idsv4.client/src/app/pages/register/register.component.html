@@ -1,0 +1,63 @@
+<div id="register" fxLayout="column">
+
+  <div id="register-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+    <div id="register-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+
+      <div class="title">CREATE AN ACCOUNT</div>
+
+      <div name="registerForm">
+
+        <app-input-control
+          [placeholder]="'Name'"
+          [control]="form.userName"
+          [errorStateMatcher]="controlStateMatcher"
+          [icon]="'account_circle'"
+        >
+        </app-input-control>
+
+        <app-input-control
+          [placeholder]="'Email'"
+          [control]="form.email"
+          [errorStateMatcher]="controlStateMatcher"
+          [icon]="'mail'"
+        >
+        </app-input-control>
+
+
+        <app-input-control
+          [placeholder]="'Password'"
+          [type]="'password'"
+          [control]="form.password"
+          [errorStateMatcher]="controlStateMatcher"
+          [icon]="'vpn_key'"
+        >
+        </app-input-control>
+
+        <app-input-control
+          [placeholder]="'Confirm Password'"
+          [type]="'password'"
+          [control]="form.passwordConfirm"
+          [errorStateMatcher]="controlStateMatcher"
+          [icon]="'vpn_key'"
+        >
+        </app-input-control>
+
+        <button mat-raised-button color="accent" class="submit-button" aria-label="CREATE AN ACCOUNT"
+                [disabled]="form.invalid"
+                (click)="handleSignUp($event)">
+          CREATE AN ACCOUNT
+        </button>
+
+      </div>
+
+      <div class="register" fxLayout="column" fxLayoutAlign="center center">
+        <span class="text">Already have an account?</span>
+        <a class="link" [routerLink]="'/auth/oidc/sign-in'">Login</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

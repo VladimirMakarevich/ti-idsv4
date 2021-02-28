@@ -1,0 +1,23 @@
+<div id="not-found-oidc" fxLayout="column">
+
+    <div id="not-found-oidc-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+        <div id="not-found-oidc-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+
+            <div class="title">Ups!</div>
+
+            <div class="subtitle">
+                <p>
+                    Something broke.
+                </p>
+            </div>
+
+            <div class="message">
+                <a class="link" [routerLink]="'/'">go home</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
