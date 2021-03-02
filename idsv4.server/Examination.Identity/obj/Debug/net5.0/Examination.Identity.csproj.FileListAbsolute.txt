@@ -1,6 +1,0 @@
-D:\projects\ti-idsv4\idsv4.server\Examination.Identity\obj\Debug\net5.0\Examination.Identity.csprojAssemblyReference.cache
-D:\projects\ti-idsv4\idsv4.server\Examination.Identity\obj\Debug\net5.0\Examination.Identity.GeneratedMSBuildEditorConfig.editorconfig
-D:\projects\ti-idsv4\idsv4.server\Examination.Identity\obj\Debug\net5.0\Examination.Identity.AssemblyInfoInputs.cache
-D:\projects\ti-idsv4\idsv4.server\Examination.Identity\obj\Debug\net5.0\Examination.Identity.AssemblyInfo.cs
-D:\projects\ti-idsv4\idsv4.server\Examination.Identity\obj\Debug\net5.0\Examination.Identity.csproj.CoreCompileInputs.cache
-D:\projects\ti-idsv4\idsv4.server\Examination.Identity\obj\Debug\net5.0\Examination.Identity.MvcApplicationPartsAssemblyInfo.cache

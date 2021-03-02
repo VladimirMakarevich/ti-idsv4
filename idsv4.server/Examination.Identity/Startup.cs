@@ -63,17 +63,17 @@ namespace Examination.Identity {
 
             services.AddDbContext<IdentityContext>(options => options.UseNpgsql(connectionString));
 
-            services.AddIdentityServer()
-                    .AddDeveloperSigningCredential()
-                    .AddConfigurationStore(option =>
-                           option.ConfigureDbContext = builder => builder.UseNpgsql(connectionString, options =>
-                           options.MigrationsAssembly("YourDataAccessLayerProjectName")))
-                    .AddOperationalStore(option =>
-                           option.ConfigureDbContext = builder => builder.UseNpgsql(connectionString, options =>
-                           options.MigrationsAssembly("YourDataAccessLayerProjectName")));
+            //services.AddIdentityServer()
+            //        .AddDeveloperSigningCredential()
+            //        .AddConfigurationStore(option =>
+            //               option.ConfigureDbContext = builder => builder.UseNpgsql(connectionString, options =>
+            //               options.MigrationsAssembly("YourDataAccessLayerProjectName")))
+            //        .AddOperationalStore(option =>
+            //               option.ConfigureDbContext = builder => builder.UseNpgsql(connectionString, options =>
+            //               options.MigrationsAssembly("YourDataAccessLayerProjectName")));
 
-            DatabaseInitializer.Initialize(app, context);
-            app.UseIdentityServer();
+            //DatabaseInitializer.Initialize(app, context);
+            //app.UseIdentityServer();
 
             //services.AddDbContext<ExaminationContext>(options =>
             //    options.UseSqlServer(connectionString)
