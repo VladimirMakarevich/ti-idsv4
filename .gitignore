@@ -96,3 +96,4 @@ ipch/
 
 # Visual Studio Trace Files
 *.e2e
+/idsv4.server/Idsv4.Identity/logger
