@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Idsv4.Identity.Models
+namespace Idsv4.Identity.Data.Models
 {
     public class User : IdentityUser
     {
@@ -18,10 +19,6 @@ namespace Idsv4.Identity.Models
         public string Phone { get; set; }
         [MaxLength(255)]
         public string SecondEmail { get; set; }
-        [MaxLength(50)]
-        public string Skype { get; set; }
-        [MaxLength(255)]
-        public string LinkedIn { get; set; }
         [MaxLength(255)]
         public string Country { get; set; }
         [MaxLength(255)]
@@ -29,12 +26,8 @@ namespace Idsv4.Identity.Models
         public DateTime? BirthDate { get; set; }
         [MaxLength(255)]
         public string Language { get; set; }
-        [MaxLength(255)]
-        public string Youtube { get; set; }
-        [MaxLength(255)]
-        public string Facebook { get; set; }
-        [MaxLength(255)]
-        public string Twitter { get; set; }
+
+        public IEnumerable<SocialLink> SocialLinks { get; set; }
 
         public int? ImageId { get; set; }
 

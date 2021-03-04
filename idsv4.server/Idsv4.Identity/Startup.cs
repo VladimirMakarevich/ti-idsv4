@@ -91,9 +91,6 @@ namespace Idsv4.Identity {
             //    .AddDefaultTokenProviders();
 
             services.AddIdentityServer(ctx => {
-                        //ctx.UserInteraction.LoginUrl = "http://localhost:4201/sign-in";
-                        //ctx.UserInteraction.LogoutUrl = "http://localhost:4201/sign-out";
-                        //ctx.UserInteraction.ErrorUrl = "http://localhost:4201/error";
                         ctx.UserInteraction.LoginUrl = "/sign-in";
                         ctx.UserInteraction.LogoutUrl = "/sign-out";
                         ctx.UserInteraction.ErrorUrl = "/error";
@@ -148,15 +145,11 @@ namespace Idsv4.Identity {
 
             app.UseSpaStaticFiles();
 
-            //app.UseAuthentication();
-
             app.UseIdentityServer();
 
             app.UseCors("CorsPolicy");
 
             app.UseRouting();
-
-//            app.UseAuthorization();
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());
 

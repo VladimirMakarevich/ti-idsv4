@@ -1,8 +1,8 @@
-﻿using Idsv4.Identity.Filters;
+﻿using IdentityServer4.Events;
+using IdentityServer4.Services;
+using Idsv4.Identity.Filters;
 using Idsv4.Identity.Models;
 using Idsv4.Student.Identity.Models.AccountModels;
-using IdentityServer4.Events;
-using IdentityServer4.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -11,7 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
-namespace Idsv4.Identity.Controllers {
+namespace Idsv4.Identity.Controllers
+{
     [Route("api/account")]
     [ApiController]
     [AllowAnonymous]
