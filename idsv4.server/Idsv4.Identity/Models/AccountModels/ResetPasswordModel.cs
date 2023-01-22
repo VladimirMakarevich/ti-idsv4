@@ -2,10 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
-namespace Idsv4.Student.Identity.Models.AccountModels {
+namespace Idsv4.Identity.Models.AccountModels
+{
     [DataContract]
     [Serializable]
-    public sealed class ResetPasswordModel {
+    public sealed class ResetPasswordModel
+    {
         [Required]
         [EmailAddress]
         [DataMember]

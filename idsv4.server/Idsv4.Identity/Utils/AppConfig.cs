@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace Idsv4.Identity.Utils {
-    public class AppConfig {
-        public AppConfig() {
+namespace Idsv4.Identity.Utils
+{
+    public class AppConfig
+    {
+        public AppConfig()
+        {
             Identity = new IdentityConfig();
         }
 
@@ -14,8 +17,10 @@ namespace Idsv4.Identity.Utils {
         public IdentityConfig Identity { get; }
     }
 
-    public class IdentityConfig {
-        public IdentityConfig() {
+    public class IdentityConfig
+    {
+        public IdentityConfig()
+        {
             JsClient = new JsClientConfig();
             User = new UserConfig();
         }
@@ -29,7 +34,8 @@ namespace Idsv4.Identity.Utils {
         public UserConfig User { get; }
     }
 
-    public class JsClientConfig {
+    public class JsClientConfig
+    {
         public string ClientId { get; set; }
         public IList<string> AllowedScopes { get; set; }
         public int AccessTokenLifetime { get; set; }
@@ -37,7 +43,8 @@ namespace Idsv4.Identity.Utils {
         public string ClientUri { get; set; }
     }
 
-    public class UserConfig {
+    public class UserConfig
+    {
         public string AllowedUserNameCharacters { get; set; }
     }
 }

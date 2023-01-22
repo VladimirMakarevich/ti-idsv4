@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace Idsv4.Identity.Data.Models
 {
-    public class User : IdentityUser
+    public class User : IdentityUser<string>
     {
         public User() : base()
         {
@@ -13,17 +13,24 @@ namespace Idsv4.Identity.Data.Models
 
         [MaxLength(100)]
         public string FirstName { get; set; }
+
         [MaxLength(100)]
         public string LastName { get; set; }
+
         [MaxLength(50)]
         public string Phone { get; set; }
+
         [MaxLength(255)]
         public string SecondEmail { get; set; }
+
         [MaxLength(255)]
         public string Country { get; set; }
+
         [MaxLength(255)]
         public string City { get; set; }
+
         public DateTime? BirthDate { get; set; }
+
         [MaxLength(255)]
         public string Language { get; set; }
 

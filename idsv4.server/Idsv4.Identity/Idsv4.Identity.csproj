@@ -2,24 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     <UserSecretsId>0aba54ef-a3da-4c98-aa8a-23c02f014fa6</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="ClientApp\**" />
-    <Compile Remove="logger\**" />
-    <Content Remove="ClientApp\**" />
-    <Content Remove="logger\**" />
-    <EmbeddedResource Remove="ClientApp\**" />
-    <EmbeddedResource Remove="logger\**" />
-    <None Remove="ClientApp\**" />
-    <None Remove="logger\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="IdentityServer4" Version="4.1.1" />
@@ -35,8 +19,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="5.0.0" />
   </ItemGroup>
 
-  <!--<ItemGroup>
-    <ProjectReference Include="..\..\core\CommonBase\Idsv4.CommonBase\Idsv4.CommonBase.csproj" />
-  </ItemGroup>-->
+  <ItemGroup>
+    <ProjectReference Include="..\Idsv4.Identity.Data\Idsv4.Identity.Data.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -4,21 +4,26 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 
-namespace Idsv4.Identity.Utils {
-    public class AuthConfig {
+namespace Idsv4.Identity.Utils
+{
+    public class AuthConfig
+    {
         public static string ApiName { get; set; } = "Idsv4_api";
 
-        public static IList<ApiResource> GetApiResources() {
+        public static IList<ApiResource> GetApiResources()
+        {
             return new List<ApiResource> {
                 new ApiResource(ApiName, "Idsv4 API")
             };
         }
 
-        public static IList<IdentityResource> GetIdentityResources() {
-            var roleResource = new IdentityResource {
+        public static IList<IdentityResource> GetIdentityResources()
+        {
+            var roleResource = new IdentityResource
+            {
                 Name = JwtClaimTypes.Role,
                 Emphasize = true,
-                UserClaims = new List<string> {JwtClaimTypes.Role}
+                UserClaims = new List<string> { JwtClaimTypes.Role }
             };
 
             return new List<IdentityResource> {
@@ -28,8 +33,10 @@ namespace Idsv4.Identity.Utils {
             };
         }
 
-        public static IList<Client> GetClients(IConfiguration configuration) {
-            if (configuration == null) {
+        public static IList<Client> GetClients(IConfiguration configuration)
+        {
+            if (configuration == null)
+            {
                 throw new ArgumentNullException(nameof(configuration));
             }
 
@@ -40,7 +47,7 @@ namespace Idsv4.Identity.Utils {
             jsClient.RefreshTokenUsage = TokenUsage.OneTimeOnly;
             jsClient.AuthorizationCodeLifetime = 900;
             jsClient.UpdateAccessTokenClaimsOnRefresh = true;
-            return new List<Client> {jsClient};
+            return new List<Client> { jsClient };
         }
     }
 }

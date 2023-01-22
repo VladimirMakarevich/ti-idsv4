@@ -1,8 +1,8 @@
 ﻿using IdentityServer4.Events;
 using IdentityServer4.Services;
+using Idsv4.Identity.Data.Models;
 using Idsv4.Identity.Filters;
-using Idsv4.Identity.Models;
-using Idsv4.Student.Identity.Models.AccountModels;
+using Idsv4.Identity.Models.AccountModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -17,7 +17,8 @@ namespace Idsv4.Identity.Controllers
     [ApiController]
     [AllowAnonymous]
     [SecurityHeaders]
-    public class AccountController : ControllerBase {
+    public class AccountController : ControllerBase
+    {
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IEventService _events;
         private readonly IUserSession _userSession;
@@ -30,7 +31,8 @@ namespace Idsv4.Identity.Controllers
             IEventService events,
             UserManager<User> userManager,
             SignInManager<User> signInManager
-        ) {
+        )
+        {
             _userSession = userSession;
             _events = events;
             _userManager = userManager;
@@ -42,18 +44,22 @@ namespace Idsv4.Identity.Controllers
         /// Handle login
         /// </summary>
         [HttpPost("sign-in")]
-//        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignIn([FromBody] LoginModel model) {
+        //        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SignIn([FromBody] LoginModel model)
+        {
             // check if we are in the context of an authorization request
             var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
-            if (context == null) {
+            if (context == null)
+            {
                 return BadRequest();
             }
 
             var user = await _userManager.FindByEmailAsync(model.Email);
 
-            if (await _userManager.CheckPasswordAsync(user, model.Password)) {
-                await _signInManager.SignInAsync(user, new AuthenticationProperties() {
+            if (await _userManager.CheckPasswordAsync(user, model.Password))
+            {
+                await _signInManager.SignInAsync(user, new AuthenticationProperties()
+                {
                     AllowRefresh = true,
                     IsPersistent = true,
                     ExpiresUtc = DateTimeOffset.UtcNow.AddDays(30),
@@ -63,7 +69,8 @@ namespace Idsv4.Identity.Controllers
                     new UserLoginSuccessEvent(user.UserName, user.Id, user.UserName, true, user.Id));
             }
 
-            return new JsonResult(new {
+            return new JsonResult(new
+            {
                 returnUrl = model.ReturnUrl,
                 statusCode = Ok().StatusCode
             });
@@ -73,11 +80,13 @@ namespace Idsv4.Identity.Controllers
         /// Handle refresh login
         /// </summary>
         [HttpPost("refresh/sign-in")]
-        public async Task<IActionResult> RefreshSignInAsync() {
+        public async Task<IActionResult> RefreshSignInAsync()
+        {
             var user = await _userManager.GetUserAsync(HttpContext.User);
             var session = _userSession.GetSessionIdAsync();
 
-            if (user != null) {
+            if (user != null)
+            {
                 await _signInManager.RefreshSignInAsync(user);
                 return Ok();
             }
@@ -89,13 +98,15 @@ namespace Idsv4.Identity.Controllers
         /// Handle register
         /// </summary>
         [HttpPost("sign-up")]
-//        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignUp([FromBody] RegisterModel model) {
-            if (!ModelState.IsValid) {
+        //        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SignUp([FromBody] RegisterModel model)
+        {
+            if (!ModelState.IsValid)
+            {
                 return BadRequest(ModelState);
             }
 
-            var user = new User {UserName = model.UserName, Email = model.Email};
+            var user = new User { UserName = model.UserName, Email = model.Email };
 
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded) return BadRequest(result.Errors);
@@ -107,10 +118,12 @@ namespace Idsv4.Identity.Controllers
         /// Handle logout
         /// </summary>
         [HttpGet("/sign-out")]
-//        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignOut([FromQuery] string logoutId) {
+        //        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SignOut([FromQuery] string logoutId)
+        {
             var context = await _interaction.GetLogoutContextAsync(logoutId);
-            if (context != null) {
+            if (context != null)
+            {
                 await _signInManager.SignOutAsync();
 
                 return Redirect(context.PostLogoutRedirectUri);

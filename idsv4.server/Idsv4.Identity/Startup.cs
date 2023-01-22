@@ -15,27 +15,33 @@ using Serilog;
 using System.IO;
 using Idsv4.Identity.Models;
 using Idsv4.Identity.Core;
+using Idsv4.Identity.Data.Models;
 
-namespace Idsv4.Identity {
-    public class Startup {
-        public Startup(IConfiguration configuration) {
+namespace Idsv4.Identity
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services) {
+        public void ConfigureServices(IServiceCollection services)
+        {
             Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
 
-//            services.ConfigureApplicationCookie(options => {
-//                options.Cookie.HttpOnly = true;
-////                options.Cookie.SameSite = SameSiteMode.Strict;
-////                options.Cookie.IsEssential = true;
-//                options.ExpireTimeSpan = TimeSpan.FromDays(30);
-//                options.SlidingExpiration = false;
-//            });
+            //            services.ConfigureApplicationCookie(options => {
+            //                options.Cookie.HttpOnly = true;
+            ////                options.Cookie.SameSite = SameSiteMode.Strict;
+            ////                options.Cookie.IsEssential = true;
+            //                options.ExpireTimeSpan = TimeSpan.FromDays(30);
+            //                options.SlidingExpiration = false;
+            //            });
 
-            services.AddCors(options => {
+            services.AddCors(options =>
+            {
                 options.AddPolicy("CorsPolicy",
                     builder => builder
                         .AllowAnyOrigin()
@@ -47,14 +53,16 @@ namespace Idsv4.Identity {
 
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "wwwroot"; });
 
-//            services.AddAntiforgery(options => { options.HeaderName = "X-XSRF-TOKEN"; });
-//            services.AddSingleton<IAsyncAuthorizationFilter, AntiforgeryTokenAuthorizationFilter>();
+            //            services.AddAntiforgery(options => { options.HeaderName = "X-XSRF-TOKEN"; });
+            //            services.AddSingleton<IAsyncAuthorizationFilter, AntiforgeryTokenAuthorizationFilter>();
 
-            services.AddControllers(options => {
-//                    options.Filters.Add<AntiforgeryTokenAuthorizationFilter>();
-                })
+            services.AddControllers(options =>
+            {
+                //                    options.Filters.Add<AntiforgeryTokenAuthorizationFilter>();
+            })
                 .SetCompatibilityVersion(CompatibilityVersion.Latest)
-                .AddNewtonsoftJson(options => {
+                .AddNewtonsoftJson(options =>
+                {
                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 });
@@ -90,18 +98,19 @@ namespace Idsv4.Identity {
             //    .AddEntityFrameworkStores<Idsv4Context>()
             //    .AddDefaultTokenProviders();
 
-            services.AddIdentityServer(ctx => {
-                        ctx.UserInteraction.LoginUrl = "/sign-in";
-                        ctx.UserInteraction.LogoutUrl = "/sign-out";
-                        ctx.UserInteraction.ErrorUrl = "/error";
-                        ctx.UserInteraction.LoginReturnUrlParameter = "returnUrl";
-                        ctx.Authentication.CookieLifetime = TimeSpan.FromDays(30);
-                        ctx.Authentication.CookieSlidingExpiration = false;
-                        ctx.Events.RaiseErrorEvents = true;
-                        ctx.Events.RaiseFailureEvents = true;
-                        ctx.Events.RaiseInformationEvents = true;
-                        ctx.Events.RaiseSuccessEvents = true;
-                    }
+            services.AddIdentityServer(ctx =>
+            {
+                ctx.UserInteraction.LoginUrl = "/sign-in";
+                ctx.UserInteraction.LogoutUrl = "/sign-out";
+                ctx.UserInteraction.ErrorUrl = "/error";
+                ctx.UserInteraction.LoginReturnUrlParameter = "returnUrl";
+                ctx.Authentication.CookieLifetime = TimeSpan.FromDays(30);
+                ctx.Authentication.CookieSlidingExpiration = false;
+                ctx.Events.RaiseErrorEvents = true;
+                ctx.Events.RaiseFailureEvents = true;
+                ctx.Events.RaiseInformationEvents = true;
+                ctx.Events.RaiseSuccessEvents = true;
+            }
                 )
                 .AddInMemoryPersistedGrants()
                 .AddDeveloperSigningCredential()
@@ -113,20 +122,21 @@ namespace Idsv4.Identity {
 
             //services.Configure<SecurityStampValidatorOptions>(options => options.ValidationInterval = TimeSpan.FromMinutes(1));
 
-//            services
-//                .AddAuthentication()
-//                .AddIdentityServerAuthentication(options => {
-//                    options.RequireHttpsMetadata = false;
-//                    options.ApiName = AuthConfig.ApiName;
-//                    options.EnableCaching = true;
-//                });
+            //            services
+            //                .AddAuthentication()
+            //                .AddIdentityServerAuthentication(options => {
+            //                    options.RequireHttpsMetadata = false;
+            //                    options.ApiName = AuthConfig.ApiName;
+            //                    options.EnableCaching = true;
+            //                });
 
-//            services.AddAuthorization();
+            //            services.AddAuthorization();
 
             services.AddTransient<IReturnUrlParser, ReturnUrlParser>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory) {
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
+        {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
                 .Enrich.FromLogContext()
@@ -135,10 +145,12 @@ namespace Idsv4.Identity {
 
             loggerFactory.AddSerilog();
 
-            if (env.IsDevelopment()) {
+            if (env.IsDevelopment())
+            {
                 app.UseDeveloperExceptionPage();
             }
-            else {
+            else
+            {
                 app.UseHsts();
                 app.UseHttpsRedirection();
             }
@@ -158,11 +170,13 @@ namespace Idsv4.Identity {
             // To avoid this problem, the policy of cookies shold be in Lax mode.
             // app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = AspNetCore.Http.SameSiteMode.Lax });
 
-            app.UseSpa(spa => {
+            app.UseSpa(spa =>
+            {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
                 // see https://go.microsoft.com/fwlink/?linkid=864501
                 spa.Options.SourcePath = "wwwroot";
-                if (env.IsDevelopment()) {
+                if (env.IsDevelopment())
+                {
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:4201");
                 }
             });

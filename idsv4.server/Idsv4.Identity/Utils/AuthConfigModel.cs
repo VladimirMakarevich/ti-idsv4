@@ -1,12 +1,16 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Idsv4.Identity.Utils {
+namespace Idsv4.Identity.Utils
+{
     [DataContract]
-    public class ConfigModel {
-        public ConfigModel() : this(null) {
+    public class ConfigModel
+    {
+        public ConfigModel() : this(null)
+        {
         }
 
-        public ConfigModel(AuthConfigModel auth) {
+        public ConfigModel(AuthConfigModel auth)
+        {
             Auth = auth ?? new AuthConfigModel();
         }
 
@@ -16,7 +20,8 @@ namespace Idsv4.Identity.Utils {
     }
 
     [DataContract]
-    public class AuthConfigModel {
+    public class AuthConfigModel
+    {
         [DataMember(Name = "authority")] public string Authority { get; set; }
 
         [DataMember(Name = "client_id")] public string ClientId { get; set; }

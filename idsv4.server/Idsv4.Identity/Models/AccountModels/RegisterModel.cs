@@ -2,10 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
-namespace Idsv4.Student.Identity.Models.AccountModels {
+namespace Idsv4.Identity.Models.AccountModels
+{
     [DataContract]
     [Serializable]
-    public sealed class RegisterModel {
+    public sealed class RegisterModel
+    {
         [Required]
         [DataMember]
         public string UserName { get; set; }

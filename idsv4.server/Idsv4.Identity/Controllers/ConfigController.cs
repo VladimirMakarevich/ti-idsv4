@@ -4,11 +4,14 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace Idsv4.Identity.Controllers {
+namespace Idsv4.Identity.Controllers
+{
     [Route("api/config")]
     [ApiController]
     [AllowAnonymous]
-    public class ConfigController : ControllerBase {
+    public class ConfigController : ControllerBase
+    {
+        // TODO: MW: move to constants
         private const string LoginCallback = "auth/oidc/sign-in-callback";
         private const string LogoutCallback = "auth/oidc/sign-out-callback";
 
@@ -16,13 +19,16 @@ namespace Idsv4.Identity.Controllers {
 
         public ConfigController(
             IOptions<AppConfig> appConfig
-        ) {
+        )
+        {
             AppConfig = appConfig.Value;
         }
 
         [HttpGet]
-        public ActionResult SpaConfig() {
-            var auth = new AuthConfigModel {
+        public ActionResult SpaConfig()
+        {
+            var auth = new AuthConfigModel
+            {
                 Authority = UriHelper.BuildAbsolute(Request.Scheme, Request.Host),
                 ClientId = AppConfig.Identity.JsClient.ClientId,
                 RedirectUri = AppConfig.Identity.JsClient.ClientUri + LoginCallback,
@@ -30,7 +36,8 @@ namespace Idsv4.Identity.Controllers {
                 ResponseType = "code",
             };
 
-            if (AppConfig.Identity.JsClient.AllowedScopes != null) {
+            if (AppConfig.Identity.JsClient.AllowedScopes != null)
+            {
                 auth.Scope = string.Join(" ", AppConfig.Identity.JsClient.AllowedScopes);
             }
 
@@ -40,8 +47,10 @@ namespace Idsv4.Identity.Controllers {
         }
 
         [HttpGet("application")]
-        public ActionResult ApplicationConfig() {
-            return Ok(new {
+        public ActionResult ApplicationConfig()
+        {
+            return Ok(new
+            {
                 cdnUrl = AppConfig.CdnUrl,
                 defaultAppUrl = AppConfig.DefaultAppUrl,
                 siteTitle = AppConfig.SiteTitle,
